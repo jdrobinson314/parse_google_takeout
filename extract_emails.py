@@ -8,7 +8,8 @@ import re
 def make_safe_filename(subject):
     """Sanitizes the subject to be used as a filename."""
     keepcharacters = (' ', '.', '_', '-')
-    return "".join(c for c in subject if c.isalnum() or c in keepcharacters).rstrip()
+    # Strip dots and spaces from ends as Windows doesn't like trailing dots in folders
+    return "".join(c for c in subject if c.isalnum() or c in keepcharacters).strip(" ._")
 
 def get_sender_foldername(sender_header):
     """Extracts a safe folder name from the sender header."""
