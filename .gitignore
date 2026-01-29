@@ -1,0 +1,13 @@
+# Inputs
+google_takeout/
+*.mbox
+
+# Outputs
+output/
+test_output*/
+all_emails_output/
+sorted_emails_output/
+
+# Python
+__pycache__/
+*.py[cod]
